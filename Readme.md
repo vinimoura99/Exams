@@ -60,5 +60,4 @@ The **Exams** folder contains the final projects for the 42 School curriculum. E
 
 ---
 
-## 📂 Project Structure
 
