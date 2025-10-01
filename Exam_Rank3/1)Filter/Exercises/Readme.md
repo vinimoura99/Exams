@@ -37,6 +37,13 @@
 ## ☑️ Exercício 6 – Procurar substring
 **Objetivo:** Implementar `ft_strstr` que retorna `1` se `to_find` estiver presente em `str`, e `0` caso contrário.
 
+**Entenda a diferenca entre este e o ex3** 
+No exercicio 3 temos que comparar por inteiro , agora e saber se tem uma substring dentro de uma string
+ft_strstr("hello world", "world")   // retorna 1
+ft_strstr("hello world", "42")      // retorna 0
+
+ft_strcmp("42", "42")    // retorna 0
+ft_strcmp("42", "24")    // retorna != 0
 ---
 
 ## ☑️ Exercício 7 – Filtrar por palavra fixa
