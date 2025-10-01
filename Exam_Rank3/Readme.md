@@ -1,104 +1,137 @@
-🏆 42 Exam Rank 3 – Level 1 & Level 2
-☑️ Level 1 – I/O and Parsing Fundamentals
-Exercise 1 – Broken GNL
+📝 42 Exams – Rank 3 Cheatsheet
 
-Objective: Debug and complete a defective version of get_next_line to read from stdin line by line, ensuring:
+🏆 Levels:
+Level 1 – I/O & Parsing Fundamentals
 
-Correct reading until \n
+🔧 Broken GNL – Debug and fix get_next_line
 
-Proper handling of EOF
+🔍 Filter – Read from stdin and replace a word dynamically
 
-Correct buffer and memory management
+📥 Scanf – Implement input parsing similar to scanf
 
-Exercise 2 – Filter
+Level 2 – Recursion, Combinatorics & Algorithms
 
-Objective: Create a program filter.c that:
+♟️ Nqueens – Solve the N queens problem using backtracking
 
-Reads from stdin line by line
+🔢 Powerset – Generate all subsets of a set
 
-Prints only lines that contain a keyword (passed as argv[1])
+🔄 Permutations – Generate all permutations of elements
 
-Uses only allowed functions (read, write, and custom functions)
+🧩 Tsq – Task-specific algorithm exercise (TBD)
 
-Exercise 3 – Scanf
+⚙️ Rip – System-level programming exercise (TBD)
 
-Objective: Implement a simplified version of scanf capable of:
+🎯 Learning Objectives
 
-Reading from stdin
+Level 1:
 
-Parsing integers (%d), strings (%s), and characters (%c)
+Read from stdin using read()
 
-Storing values in variables passed by reference
+Process lines byte by byte or in blocks
 
-☑️ Level 2 – Recursion, Combinatorics and Algorithms
-Exercise 4 – Nqueens
+Debug get_next_line efficiently
 
-Objective: Solve the N queens problem using backtracking:
+Implement word filtering (filter.c)
 
-Place N queens on an NxN board
+Manipulate strings without external functions
 
-Ensure no queen attacks another (rows, columns, diagonals)
+Level 2:
 
-Print all possible solutions
+Solve problems recursively
 
-Exercise 5 – Powerset
+Implement backtracking (Nqueens)
 
-Objective: Generate all subsets of a given set:
+Generate combinations and permutations
 
-Use recursion
+Optimize algorithms and logic
 
-Print all subsets, including the empty set []
+📂 File Structure
 
-Example: {1,2,3} → [], [1], [2], [3], [1,2], [1,3], [2,3], [1,2,3]
+Exams/
+├── includes/
+│ └── exam_utils.h – Utility functions
+├── src/
+│ ├── level1_broken_gnl.c
+│ ├── level1_filter.c
+│ ├── level1_scanf.c
+│ ├── level2_nqueens.c
+│ ├── level2_powerset.c
+│ ├── level2_permutations.c
+│ ├── level2_tsq.c
+│ ├── level2_rip.c
+├── Makefile – Compile all Rank 3 exercises
+└── .gitignore
 
-Exercise 6 – Permutations
+🚀 Compile & Run
 
-Objective: Generate all permutations of distinct elements:
+1️⃣ Clone repo:
+git clone https://github.com/vinimoura99/42core.git
+cd 42core/Exams
 
-Use recursion with swapping
+2️⃣ Compile all exercises:
+make
 
-Example: {1,2,3} → [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1]
+3️⃣ Run example (Filter):
+./level1_filter "word"
 
-Exercise 7 – Tsq
+Replace "word" with your target word from stdin.
 
-Objective: Solve a specific algorithmic task (exam-defined):
+🛠️ Implementation Tips
 
-Efficient data manipulation
+Level 1 – Filter / GNL / Scanf
 
-Logic and optimization practice
+Use read() for efficient input
 
-Exercise 8 – Rip
+Replace words line by line with *
 
-Objective: System-level programming exercise (exam-defined):
+Preserve \n at the end of each line
 
-Focus on low-level reasoning
+Test get_next_line with multiple buffer sizes
 
-Pointer manipulation and memory handling
+Always check read() return values
 
-📝 What each part teaches
+Level 2 – Nqueens / Powerset / Permutations
 
-Broken GNL – Correct stdin reading, buffer handling, and debugging broken code
+Recursively generate all combinations/permutations
 
-Filter – Dynamic input processing and string filtering
+Backtracking to validate Nqueens positions
 
-Scanf – Input parsing and pointer manipulation
+Avoid memory leaks: use malloc & free carefully
 
-Nqueens – Introduction to backtracking
+Swap elements for permutations
 
-Powerset – Using recursion to generate subsets
+📌 Examples
 
-Permutations – Recursion with element swapping
+Filter
 
-Tsq / Rip – Logic, optimization, and low-level programming
+echo "hello world, hello again" | ./level1_filter hello
+Output: ***** world, ***** again
+
+Powerset
+
+int arr[] = {1,2,3};
+powerset(arr, 3)
+Output: [], [1], [2], [3], [1,2], [1,3], [2,3], [1,2,3]
+
+Nqueens
+
+nqueens(4)
+Output:
+..Q.
+Q...
+...Q
+.Q..
+
+🧠 Key Concepts
+
+Efficient I/O (read/write)
+
+Buffer management & memory handling
+
+Recursion & backtracking
+
+Debugging and fixing programs
+
+Combinatorics & permutations
 
 ✅ Completion Checklist
-
-All Level 1 exercises implemented and working
-
-All Level 2 exercises implemented and working
-
-Tested with multiple inputs
-
-No memory leaks
-
-Clean, modular, and well-commented code
