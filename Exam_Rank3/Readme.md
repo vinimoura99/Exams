@@ -1,215 +1,137 @@
-# 🏆 42 Exams – Rank 3: Level1 & Level2
+📝 42 Exams – Rank 3 Cheatsheet
 
-**Exam Rank 3** at 42 School is divided into **Level 1** and **Level 2**, focusing on **stdin/stdout handling**, **recursion**, **combinatorics**, **filtering**, and **debugging programs in C**.
+🏆 Levels:
+Level 1 – I/O & Parsing Fundamentals
 
-> Part of the [vinimoura99/42core](https://github.com/vinimoura99/42core) repository
+🔧 Broken GNL – Debug and fix get_next_line
 
----
+🔍 Filter – Read from stdin and replace a word dynamically
 
-## 📚 Rank 3 Structure
+📥 Scanf – Implement input parsing similar to scanf
 
-### **Level 1 – I/O and Parsing Fundamentals**
-- **Broken GNL** – Debug and fix `get_next_line`.
-- **Filter** – Read from stdin and dynamically filter words.
-- **Scanf** – Implement input parsing similar to `scanf`.
+Level 2 – Recursion, Combinatorics & Algorithms
 
-### **Level 2 – Recursion, Combinatorics, and Algorithms**
-- **Nqueens** – Solve the N queens problem using backtracking.
-- **Powerset** – Generate all subsets of a given set.
-- **Permutations** – Generate all permutations of elements.
-- **Tsq** – Task-specific algorithm exercise (TBD).
-- **Rip** – System-level programming exercise (TBD).
+♟️ Nqueens – Solve the N queens problem using backtracking
 
----
+🔢 Powerset – Generate all subsets of a set
 
-## 🎯 Learning Objectives
+🔄 Permutations – Generate all permutations of elements
 
-**Level 1:**
-- Understand reading from stdin using `read()`.
-- Process lines **byte by byte** or in blocks.
-- Debug `get_next_line` and handle buffers correctly.
-- Implement word filters (`filter.c`).
-- Manipulate strings without relying on external functions.
+🧩 Tsq – Task-specific algorithm exercise (TBD)
 
-**Level 2:**
-- Solve problems using **recursion**.
-- Understand **backtracking** and generate combinations.
-- Implement efficient algorithms for sets and permutations.
-- Improve logical problem-solving and code optimization skills.
+⚙️ Rip – System-level programming exercise (TBD)
 
----
+🎯 Learning Objectives
 
-## 📂 Recommended File Structure
+Level 1:
 
-Exams/
-├── includes/
-│ └── exam_utils.h # Utility functions used across exercises
-├── src/
-│ ├── level1_broken_gnl.c # Level 1 - Broken GNL
-│ ├── level1_filter.c # Level 1 - Filter
-│ ├── level1_scanf.c # Level 1 - Scanf
-│ ├── level2_nqueens.c # Level 2 - Nqueens
-│ ├── level2_powerset.c # Level 2 - Powerset
-│ ├
-You said:
-tudo dentro do markdown
-ChatGPT said:
+Read from stdin using read()
 
-Perfeito! Aqui está o README completo em inglês, todo dentro de um único bloco Markdown, pronto para colocar no seu repositório:
+Process lines byte by byte or in blocks
 
-# 🏆 42 Exams – Rank 3: Level1 & Level2
+Debug get_next_line efficiently
 
-**Exam Rank 3** at 42 School is divided into **Level 1** and **Level 2**, focusing on **stdin/stdout handling**, **recursion**, **combinatorics**, **filtering**, and **debugging programs in C**.
+Implement word filtering (filter.c)
 
-> Part of the [vinimoura99/42core](https://github.com/vinimoura99/42core) repository
+Manipulate strings without external functions
 
----
+Level 2:
 
-## 📚 Rank 3 Structure
+Solve problems recursively
 
-### **Level 1 – I/O and Parsing Fundamentals**
-- **Broken GNL** – Debug and fix `get_next_line`.
-- **Filter** – Read from stdin and dynamically filter words.
-- **Scanf** – Implement input parsing similar to `scanf`.
+Implement backtracking (Nqueens)
 
-### **Level 2 – Recursion, Combinatorics, and Algorithms**
-- **Nqueens** – Solve the N queens problem using backtracking.
-- **Powerset** – Generate all subsets of a given set.
-- **Permutations** – Generate all permutations of elements.
-- **Tsq** – Task-specific algorithm exercise (TBD).
-- **Rip** – System-level programming exercise (TBD).
+Generate combinations and permutations
 
----
+Optimize algorithms and logic
 
-## 🎯 Learning Objectives
-
-**Level 1:**
-- Understand reading from stdin using `read()`.
-- Process lines **byte by byte** or in blocks.
-- Debug `get_next_line` and handle buffers correctly.
-- Implement word filters (`filter.c`).
-- Manipulate strings without relying on external functions.
-
-**Level 2:**
-- Solve problems using **recursion**.
-- Understand **backtracking** and generate combinations.
-- Implement efficient algorithms for sets and permutations.
-- Improve logical problem-solving and code optimization skills.
-
----
-
-## 📂 Recommended File Structure
+📂 File Structure
 
 Exams/
 ├── includes/
-│ └── exam_utils.h # Utility functions used across exercises
+│ └── exam_utils.h – Utility functions
 ├── src/
-│ ├── level1_broken_gnl.c # Level 1 - Broken GNL
-│ ├── level1_filter.c # Level 1 - Filter
-│ ├── level1_scanf.c # Level 1 - Scanf
-│ ├── level2_nqueens.c # Level 2 - Nqueens
-│ ├── level2_powerset.c # Level 2 - Powerset
-│ ├── level2_permutations.c # Level 2 - Permutations
-│ ├── level2_tsq.c # Level 2 - Tsq
-│ ├── level2_rip.c # Level 2 - Rip
-├── Makefile # Compile all Rank 3 exercises
-└── .gitignore # Ignore unnecessary files
+│ ├── level1_broken_gnl.c
+│ ├── level1_filter.c
+│ ├── level1_scanf.c
+│ ├── level2_nqueens.c
+│ ├── level2_powerset.c
+│ ├── level2_permutations.c
+│ ├── level2_tsq.c
+│ ├── level2_rip.c
+├── Makefile – Compile all Rank 3 exercises
+└── .gitignore
 
+🚀 Compile & Run
 
----
-
-## 🚀 How to Compile and Run
-
-1. Clone the repository:
-
-```bash
+1️⃣ Clone repo:
 git clone https://github.com/vinimoura99/42core.git
 cd 42core/Exams
 
-    Compile all exercises:
-
+2️⃣ Compile all exercises:
 make
 
-    Run a sample program:
-
+3️⃣ Run example (Filter):
 ./level1_filter "word"
 
-    Replace "word" with the word you want to filter from stdin.
+Replace "word" with your target word from stdin.
 
 🛠️ Implementation Tips
 
-Level 1 – Filter / GNL / Scanf:
+Level 1 – Filter / GNL / Scanf
 
-    Use read() to handle stdin efficiently.
+Use read() for efficient input
 
-    For filter, iterate through each line and replace occurrences of the word with *.
+Replace words line by line with *
 
-    Preserve the newline \n at the end of each line.
+Preserve \n at the end of each line
 
-    For get_next_line, test with different buffer sizes.
+Test get_next_line with multiple buffer sizes
 
-    Debugging tip: always check read() return value and buffer sizes.
+Always check read() return values
 
-Level 2 – Nqueens / Powerset / Permutations:
+Level 2 – Nqueens / Powerset / Permutations
 
-    Use recursion to generate all combinations.
+Recursively generate all combinations/permutations
 
-    For Nqueens, use backtracking to validate positions.
+Backtracking to validate Nqueens positions
 
-    Powerset: include or exclude each element recursively.
+Avoid memory leaks: use malloc & free carefully
 
-    Permutations: swap elements at each recursion level.
-
-    Avoid memory leaks using malloc and free properly.
+Swap elements for permutations
 
 📌 Examples
 
 Filter
 
 echo "hello world, hello again" | ./level1_filter hello
-# Output: ***** world, ***** again
+Output: ***** world, ***** again
 
 Powerset
 
 int arr[] = {1,2,3};
-powerset(arr, 3);
-# Output (all possible subsets):
-# [], [1], [2], [3], [1,2], [1,3], [2,3], [1,2,3]
+powerset(arr, 3)
+Output: [], [1], [2], [3], [1,2], [1,3], [2,3], [1,2,3]
 
 Nqueens
 
-nqueens(4);
-# Output:
-# ..Q.
-# Q...
-# ...Q
-# .Q..
+nqueens(4)
+Output:
+..Q.
+Q...
+...Q
+.Q..
 
 🧠 Key Concepts
 
-    Efficient I/O: read and write bytes correctly.
+Efficient I/O (read/write)
 
-    Buffers & Memory: handle malloc/free and dynamic arrays carefully.
+Buffer management & memory handling
 
-    Recursion & Backtracking: essential for Level 2 exercises.
+Recursion & backtracking
 
-    Debugging: find and fix bugs in GNL, Filter, or Scanf.
+Debugging and fixing programs
 
-    Combinatorics: generate subsets, permutations, and valid solutions.
+Combinatorics & permutations
 
 ✅ Completion Checklist
-
-All Level 1 exercises implemented and working.
-
-All Level 2 exercises implemented and working.
-
-Tested with various inputs, buffers, and lines.
-
-No memory leaks.
-
-    Clean, modular, and commented code.
-
-📜 License
-
-This project is part of the 42 School curriculum and is for educational purposes only.
-Feel free to explore, study, and contribute!
