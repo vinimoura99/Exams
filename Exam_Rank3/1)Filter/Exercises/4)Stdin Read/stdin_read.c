@@ -6,7 +6,7 @@
 /*   By: vmoura-d <vmoura-d@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 15:45:33 by vmoura-d          #+#    #+#             */
-/*   Updated: 2025/10/01 16:28:57 by vmoura-d         ###   ########.fr       */
+/*   Updated: 2025/10/03 10:43:25 by vmoura-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(void)
     char buffer[1024];
     int n;
 
-    n = read(0, buffer, 1024);
+    n = read(0, buffer, 1026);
 
     if (n > 0)
         write(1, buffer, n);
