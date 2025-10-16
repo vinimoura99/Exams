@@ -6,7 +6,7 @@
 /*   By: vmoura-d <vmoura-d@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:13:26 by vmoura-d          #+#    #+#             */
-/*   Updated: 2025/10/15 15:29:04 by vmoura-d         ###   ########.fr       */
+/*   Updated: 2025/10/16 09:23:02 by vmoura-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,69 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Swap two characters in a string
+
+void swap(char *str, char *str2)
+{
+    char tmp = *str;
+    *str = *str2;
+    *str2 = tmp;
+}
+
+
+void organize(char *str)
+{
+    int i,j;
+    int len = strlen(str);
+
+    for(i = 0; i < len; i++)
+    {
+        for(j = i + 1; j < len;j++)
+        {
+            if(str[i] > str[j])
+            {
+                swap(&str[i],&str[j]);
+            }
+        }
+    }
+}
+
+void permute(char *str, int start, int end)
+{
+    int i;    
+
+    if(start == end)
+    {
+        write(1, str, end + 1);
+        write(1, "\n", 1);
+        return;
+    }
+
+    i = start;
+    while(i <= end)
+    {
+        swap(&str[start], &str[i]);
+        permute(str, start + 1, end);
+        swap(&str[start], &str[i]);
+        i++;
+
+    }
+}
+
+int main(int ac, char **av)
+{
+    if(ac == 2)
+    {
+        char *str = av[1];
+
+        organize(str);
+        permute(str, 0, strlen(str) - 1);
+    }
+    else
+        return(1);
+} 
+
+
+ /* // Swap two characters in a string
 // Example: 'abc' -> swap a and c -> 'cba'
 void swap(char *a, char *b)
 {
@@ -79,4 +141,5 @@ int main(int ac, char **av)
     permute(str, 0, strlen(str) - 1);
 
     return 0;
-}
+} */
+ 

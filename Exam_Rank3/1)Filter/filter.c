@@ -6,7 +6,7 @@
 /*   By: vmoura-d <vmoura-d@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 11:16:43 by vmoura-d          #+#    #+#             */
-/*   Updated: 2025/10/15 14:58:58 by vmoura-d         ###   ########.fr       */
+/*   Updated: 2025/10/16 09:08:41 by vmoura-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,55 @@
 #include <string.h>
 
 void filter(char *str, char *find)
+{
+    int i = 0;
+    int j;
+    int len = strlen(find);
+
+    while(str[i])
+    {
+        j = 0;
+        
+        while(find[j] && str[i + j] == find[j])
+            j++;
+        
+        if ( j == len)
+        {
+            while(j > 0)
+            {
+                write(1, "*", 1);
+                j--;
+            }
+            i += len;
+        }
+        else
+        {
+            write(1, &str[i], 1);
+            i++;
+        }
+        
+    }
+}
+
+
+int main(int ac, char **av)
+{
+    char buffer[2400];
+    int bytes_read;
+    int len = 0;
+
+    while((bytes_read = read(0, buffer + len, sizeof(buffer) - len - 1)) > 0)
+        len += bytes_read;
+
+    if(len < 0)
+    {
+        perror("Error");
+        return(1);
+    }
+
+    filter(buffer, av[1]);
+}
+/* void filter(char *str, char *find)
 {
     int idx = 0;
     int idx2;
@@ -62,3 +111,4 @@ int main(int ac, char **av)
 
     filter(buffer, av[1]);
 }
+ */
