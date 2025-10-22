@@ -1,5 +1,13 @@
 {
     "files.associations": {
-        "broken_gnl.h": "c"
+        "Subject": "markdown",
+        "stdlib.h": "c",
+        "array": "c",
+        "string_view": "c",
+        "format": "c",
+        "initializer_list": "c",
+        "ranges": "c",
+        "span": "c",
+        "valarray": "c"
     }
 }

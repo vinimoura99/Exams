@@ -1,3 +1,29 @@
+╔════════════════════════════════════════════════╗
+║          Assignment: broken_GNL (Unofficial)   ║
+╠════════════════════════════════════════════════╣
+║ Expected file: broken_GNL.c, broken_GNL.h      ║
+║ Allowed functions:                             ║
+║   read, malloc, free, write, perror            ║
+╚════════════════════════════════════════════════╝
+
+Description:
+
+  • Implement a function get_next_line(int fd) that reads
+    a file descriptor line by line.
+  • Returns the next line read, including the newline
+    character if present.
+  • Handles dynamic memory allocation for each line.
+  • Should be able to handle multiple consecutive calls
+    without losing the previous buffer content.
+  • Tested with a static buffer of size BUFFER_SIZE.
+
+Notes:
+  • This is a non-official subject for study purposes.
+  • The main() function is not included.
+  • The code below is what needs to be corrected to work properly.
+
+Code to fix:
+
 #include "broken_GNL.h"
 #include <unistd.h>
 #include <fcntl.h>
@@ -88,27 +114,4 @@ char	*get_next_line(int fd)
 		return (NULL);
 	}
 	return (ret);
-}
-
-
-int	main(void)
-{
-	int		fd;
-	char	*line;
-
-	fd = open("leitura.txt", O_RDONLY);
-	if (fd == -1)
-	{
-		perror("Erro ao abrir o arquivo");
-		return (1);
-	}
-
-	while ((line = get_next_line(fd)) != NULL)
-	{
-		printf("Linha: %s", line);
-		free(line);
-	}
-
-	close(fd);
-	return (0);
 }

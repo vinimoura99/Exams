@@ -1,0 +1,42 @@
+╔══════════════════════════════════════════════════╗
+║             Assignment: n_queens                 ║
+╠══════════════════════════════════════════════════╣
+║ Expected files: *.c, *.h                         ║
+║ Allowed functions: atoi, fprintf, write, calloc, ║
+║                    malloc, free, realloc, stdout,║
+║                    stderr                        ║
+╚══════════════════════════════════════════════════╝
+
+Write a program that will solve the **N-Queens Problem** by finding and printing **all valid solutions** for a given board size N provided as a command-line argument.
+
+The core algorithm must use **Backtracking** (a recursive trial-and-error approach).
+
+We will **not test with negative values**. The order of the solutions is **not important**.
+
+---
+
+You will display the solutions on the **standard output (stdout)** under the following format:
+
+<p1> <p2> <p3> ... <pN>\n
+
+where $p_n$ is the **line index** (from 0 to $N-1$) of the queen in the $n$-th column (starting from $n=0$).
+
+---
+
+$> ./n_queens 2 | cat -e
+$
+
+$> ./n_queens 4 | cat -e
+1 3 0 2$
+2 0 3 1$
+
+$> ./n_queens 7 | cat -e
+0 2 4 6 1 3 5$
+0 3 6 2 5 1 4$
+etc...
+
+---
+
+* If the program is executed with **zero or more than one argument**, it must return **1** and print nothing.
+* If $N \le 0$, the program must return **0** and print nothing.
+* Memory allocation failures (`malloc`, `calloc`) must be handled (return **1**).

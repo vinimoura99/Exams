@@ -1,0 +1,32 @@
+╔════════════════════════════════════════════════╗
+║                Assignment: filter              ║
+╠════════════════════════════════════════════════╣
+║ Expected file: filter.c                        ║
+║ Allowed functions:                             ║
+║   read, write, strlen, memmem, memmove,        ║
+║   malloc, calloc, realloc, free, printf,       ║
+║   fprintf, stdout, stderr, perror              ║
+╚════════════════════════════════════════════════╝
+
+Description:
+  • Program takes exactly ONE argument
+  • Reads from stdin and writes to stdout
+  • Every occurrence of the argument must be replaced by '*' (same length)
+  • Tested with random buffer sizes using a custom read function
+  • Should behave like the provided filter.sh
+
+Examples:
+  • ./filter bonjour
+      behaves like: sed 's/bonjour/*******/g'
+  • ./filter abc
+      behaves like: sed 's/abc/***/g'
+
+Error handling:
+  • On read/malloc errors, write "Error: " followed by the message to stderr and return 1
+  • If called with no argument, empty argument, or multiple arguments, return 1
+
+Test cases:
+  • echo 'abcdefrmaaaabcdeabcabcdabc' | ./filter abc | cat -e
+      ***defaaa***de******d***$
+  • echo 'ababcabababc' | ./filter ababc | cat -e
+      *****ab*****$
