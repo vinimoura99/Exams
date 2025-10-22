@@ -1,11 +1,13 @@
 # 🚀 Exames de C - Progressão de Estudos
 
-> Este repositório documenta minhas soluções para os exames práticos de programação em C da 42 School.
-> O objetivo é aprofundar o conhecimento em C, manipulação de memória e algoritmos essenciais.
+> Projeto desenvolvido como parte do currículo da 42 School.
+> Este repositório documenta minhas soluções para os exames práticos de programação em C.
 
 ---
 
-## 🔥 Status Geral do Progresso
+## 🔥 Status Atual e Foco
+
+O objetivo é aprofundar o conhecimento em manipulação de baixo nível, memória e algoritmos essenciais.
 
 | Exame (Ranck) | Status | Foco Principal |
 |:---:|:----:|:---|
@@ -21,85 +23,75 @@
 
 ## 📚 Estrutura do Repositório
 
-O repositório está organizado de acordo com os **Níveis de Dificuldade (Levels)** que compõem o **Ranck 02**, seguido pelos **Projetos Longos** do **Ranck 03**.
+O repositório está organizado em pastas que representam os níveis dos exames: `LevelX` para o Ranck 02 e pastas nomeadas para os projetos longos do Ranck 03.
 
 ### Ranck 02: Fundamentos e Níveis (Levels 1 a 4)
 
-Este exame é composto por vários níveis, focando em funções básicas e essenciais de manipulação de dados, strings e aritmética simples.
+Este exame foca em funções básicas de manipulação de dados, strings e aritmética simples.
 
-#### Nível 1: Fundamentos Básicos
+#### 📁 Nível 1: Fundamentos Básicos
 
 Foco em funções utilitárias simples e manipulação de caracteres.
 
-| Função | Tópicos Principais |
-|:---:|:---:|
-| `ft_strlen`, `ft_swap`, `ft_strcpy` | Manipulação de strings e ponteiros. |
-| `fizzbuzz`, `first_word` | Lógica de laços e processamento de strings. |
-| `ft_rotone`, `ft_rot13`, `ft_ulstr` | Criptografia/manipulação de caracteres. |
-| `ft_putstr`, `ft_repeat_alpha` | Funções de saída e repetição. |
+* `ft_strlen`, `ft_swap`, `ft_strcpy`: Manipulação de strings e ponteiros.
+* `fizzbuzz`, `first_word`: Lógica de laços e processamento de strings.
+* `ft_rotone`, `ft_rot13`, `ft_ulstr`: Criptografia/manipulação de caracteres.
+* `ft_putstr`, `ft_repeat_alpha`: Funções de saída e repetição.
 
-> **Pasta:** [`./Level1`](./Level1)
+> **Local:** [`./Level1`](./Level1)
 
-#### Nível 2: Operações em Strings e Bits
+#### 📁 Nível 2: Operações em Strings e Bits
 
 Introdução a manipulação de bits e conversão de strings.
 
-| Função | Tópicos Principais |
-|:---:|:---:|
-| `do_op`, `ft_atoi`, `ft_max` | Aritmética e conversão numérica. |
-| `print_bits`, `swap_bits`, `reverse_bits` | Manipulação de bits (bitwise operations). |
-| `union`, `inter`, `wdmatch` | Lógica de conjuntos e comparação de strings. |
-| `camel_to_snake`, `snake_to_camel` | Formatação de strings. |
+* `do_op`, `ft_atoi`, `ft_max`: Aritmética e conversão numérica.
+* `print_bits`, `swap_bits`, `reverse_bits`: Manipulação de bits (bitwise operations).
+* `union`, `inter`, `wdmatch`: Lógica de conjuntos e comparação de strings.
+* `camel_to_snake`, `snake_to_camel`: Formatação de strings.
 
-> **Pasta:** [`./Level2`](./Level2)
+> **Local:** [`./Level2`](./Level2)
 
-#### Nível 3: Alocação Dinâmica e Matemática
+#### 📁 Nível 3: Alocação Dinâmica e Matemática
 
 Foco em funções que exigem alocação de memória e algoritmos matemáticos intermediários.
 
-| Função | Tópicos Principais |
-|:---:|:---:|
-| `ft_range`, `ft_rrange` | Alocação dinâmica (`malloc`) de arrays. |
-| `add_prime_sum`, `pgcd`, `lcm` | Algoritmos matemáticos (primos, MDC, MMC). |
-| `epur_str`, `expand_str` | Normalização e formatação avançada de strings. |
-| `ft_list_size` | Listas encadeadas básicas (estrutura e tamanho). |
+* `ft_range`, `ft_rrange`: Alocação dinâmica (`malloc`) de arrays.
+* `add_prime_sum`, `pgcd`, `lcm`: Algoritmos matemáticos (primos, MDC, MMC).
+* `epur_str`, `expand_str`: Normalização e formatação avançada de strings.
+* `ft_list_size`: Listas encadeadas básicas (estrutura e tamanho).
 
-> **Pasta:** [`./Level3`](./Level3)
+> **Local:** [`./Level3`](./Level3)
 
-#### Nível 4: Estruturas de Dados e Split
+#### 📁 Nível 4: Estruturas de Dados e Split
 
 Foco em estruturas de dados dinâmicas e manipulação complexa de strings/memória.
 
-| Função | Tópicos Principais |
-|:---:|:---:|
-| `ft_split` | Manipulação de memória e alocação de array de strings. |
-| `ft_itoa`, `fprime` | Conversão numérica e algoritmos de fatoração. |
-| `sort_list`, `ft_list_remove_if` | Implementação e manipulação avançada de **Listas Encadeadas**. |
-| `rostring`, `rev_wstr` | Reordenação e formatação complexa de frases. |
+* `ft_split`: Manipulação de memória e alocação de array de strings.
+* `ft_itoa`, `fprime`: Conversão numérica e algoritmos de fatoração.
+* `sort_list`, `ft_list_remove_if`: Implementação e manipulação avançada de **Listas Encadeadas**.
+* `rostring`, `rev_wstr`: Reordenação e formatação complexa de frases.
 
-> **Pasta:** [`./Level4`](./Level4)
+> **Local:** [`./Level4`](./Level4)
 
 ---
 
-### Ranck 03: Projetos Longos (Exames de Backtracking/GNL)
+### Ranck 03: Projetos Longos (Backtracking/GNL)
 
-Este exame exige a aplicação de múltiplas técnicas em projetos de maior escala e complexidade, frequentemente envolvendo recursão ou manipulação de arquivos.
+Este exame exige a aplicação de múltiplas técnicas em projetos de maior escala.
 
-| Projeto | Tópicos Principais |
-|:---:|:---:|
-| `Broken_GNL` | Manipulação de arquivos, leitura de descritores, variáveis `static`. |
-| `Filter`, `Rip` | Algoritmos complexos e estruturas de dados dinâmicas. |
-| `N_queens`, `Permutations` | Backtracking, recursão e problemas combinatórios clássicos. |
-| `TSP` (Pendente) | Algoritmos de grafos (Travelling Salesman Problem). |
-| `Scanf` (Pendente) | Implementação de funcionalidade de entrada formatada. |
-
-> **Pastas:** [`./Broken_GNL`, `./Filter`, etc.] (No diretório raiz do Ranck 03)
+* `Broken_GNL`: Manipulação de arquivos, leitura de descritores, variáveis `static`.
+* `Filter`, `Rip`: Algoritmos complexos e estruturas de dados dinâmicas.
+* `N_queens`, `Permutations`: Backtracking, recursão e problemas combinatórios clássicos.
+* `TSP` (Pendente): Algoritmos de grafos (Travelling Salesman Problem).
+* `Scanf` (Pendente): Implementação de funcionalidade de entrada formatada.
 
 ---
 
 ## 💻 Como Compilar e Testar
 
 Os exercícios são arquivos C únicos (`.c`). Para compilar e rodar qualquer um deles (assumindo que você tenha o `gcc`):
+
+### ⚙️ Instruções de Compilação
 
 1.  **Navegue até o diretório do exercício:**
     ```bash
@@ -118,4 +110,4 @@ Os exercícios são arquivos C únicos (`.c`). Para compilar e rodar qualquer um
     ```
     *Exemplo:* `./do_op "42" "+" "42"`
 
-> 💡 **Nota:** O script **`Launcher.py`** (presente no diretório do Rank 03) pode ser usado para compilação e testes rápidos com diferentes argumentos e entradas (`stdin`).
+> 💡 **Ferramenta de Teste:** O script **`Launcher.py`** (presente no diretório do Rank 03) pode ser usado para compilação e testes rápidos com diferentes argumentos e entradas (`stdin`).
