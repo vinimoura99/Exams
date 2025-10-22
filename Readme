@@ -31,37 +31,37 @@ Este exame foca em funções básicas de manipulação de dados, strings e aritm
 
 #### 📁 Nível 1: Fundamentos Básicos
 
-* `ft_strlen`, `ft_swap`, `ft_strcpy`: Manipulação de strings e ponteiros.
-* `fizzbuzz`, `first_word`: Lógica de laços e processamento de strings.
-* `ft_rotone`, `ft_rot13`, `ft_ulstr`: Criptografia/manipulação de caracteres.
-* `ft_putstr`, `ft_repeat_alpha`: Funções de saída e repetição.
+* **`ft_strlen`, `ft_swap`, `ft_strcpy`**: Manipulação de strings e ponteiros.
+* **`fizzbuzz`, `first_word`**: Lógica de laços e processamento de strings.
+* **`ft_rotone`, `ft_rot13`, `ft_ulstr`**: Criptografia/manipulação de caracteres.
+* **`ft_putstr`, `ft_repeat_alpha`**: Funções de saída e repetição.
 
 > **Local:** [`./Level1`](./Level1)
 
 #### 📁 Nível 2: Operações em Strings e Bits
 
-* `do_op`, `ft_atoi`, `ft_max`: Aritmética e conversão numérica.
-* `print_bits`, `swap_bits`, `reverse_bits`: Manipulação de bits (bitwise operations).
-* `union`, `inter`, `wdmatch`: Lógica de conjuntos e comparação de strings.
-* `camel_to_snake`, `snake_to_camel`: Formatação de strings.
+* **`do_op`, `ft_atoi`, `ft_max`**: Aritmética e conversão numérica.
+* **`print_bits`, `swap_bits`, `reverse_bits`**: Manipulação de bits (bitwise operations).
+* **`union`, `inter`, `wdmatch`**: Lógica de conjuntos e comparação de strings.
+* **`camel_to_snake`, `snake_to_camel`**: Formatação de strings.
 
 > **Local:** [`./Level2`](./Level2)
 
 #### 📁 Nível 3: Alocação Dinâmica e Matemática
 
-* `ft_range`, `ft_rrange`: Alocação dinâmica (`malloc`) de arrays.
-* `add_prime_sum`, `pgcd`, `lcm`: Algoritmos matemáticos (primos, MDC, MMC).
-* `epur_str`, `expand_str`: Normalização e formatação avançada de strings.
-* `ft_list_size`: Listas encadeadas básicas (estrutura e tamanho).
+* **`ft_range`, `ft_rrange`**: Alocação dinâmica (`malloc`) de arrays.
+* **`add_prime_sum`, `pgcd`, `lcm`**: Algoritmos matemáticos (primos, MDC, MMC).
+* **`epur_str`, `expand_str`**: Normalização e formatação avançada de strings.
+* **`ft_list_size`**: Listas encadeadas básicas (estrutura e tamanho).
 
 > **Local:** [`./Level3`](./Level3)
 
 #### 📁 Nível 4: Estruturas de Dados e Split
 
-* `ft_split`: Manipulação de memória e alocação de array de strings.
-* `ft_itoa`, `fprime`: Conversão numérica e algoritmos de fatoração.
-* `sort_list`, `ft_list_remove_if`: Implementação e manipulação avançada de **Listas Encadeadas**.
-* `rostring`, `rev_wstr`: Reordenação e formatação complexa de frases.
+* **`ft_split`**: Manipulação de memória e alocação de array de strings.
+* **`ft_itoa`, `fprime`**: Conversão numérica e algoritmos de fatoração.
+* **`sort_list`, `ft_list_remove_if`**: Implementação e manipulação avançada de **Listas Encadeadas**.
+* **`rostring`, `rev_wstr`**: Reordenação e formatação complexa de frases.
 
 > **Local:** [`./Level4`](./Level4)
 
@@ -69,11 +69,11 @@ Este exame foca em funções básicas de manipulação de dados, strings e aritm
 
 ### Ranck 03: Projetos Longos (Backtracking/GNL)
 
-* `Broken_GNL`: Manipulação de arquivos, leitura de descritores, variáveis `static`.
-* `Filter`, `Rip`: Algoritmos complexos e estruturas de dados dinâmicas.
-* `N_queens`, `Permutations`: Backtracking, recursão e problemas combinatórios clássicos.
-* `TSP` (Pendente): Algoritmos de grafos (Travelling Salesman Problem).
-* `Scanf` (Pendente): Implementação de funcionalidade de entrada formatada.
+* **`Broken_GNL`**: Manipulação de arquivos, leitura de descritores, variáveis `static`.
+* **`Filter`, `Rip`**: Algoritmos complexos e estruturas de dados dinâmicas.
+* **`N_queens`, `Permutations`**: Backtracking, recursão e problemas combinatórios clássicos.
+* **`TSP` (Pendente)**: Algoritmos de grafos (Travelling Salesman Problem).
+* **`Scanf` (Pendente)**: Implementação de funcionalidade de entrada formatada.
 
 ---
 
