@@ -1,13 +1,13 @@
-# 🚀 Exames de C - Progressão
+# 🚀 Exames de C - Progressão de Estudos
 
-Este repositório contém as minhas soluções para os exames práticos de programação em C. O objetivo é acompanhar minha evolução em linguagens de baixo nível, memória, estruturas de dados e algoritmos, seguindo a estrutura de níveis de dificuldade dos exames.
+Este repositório documenta minhas soluções para os exames práticos de programação em C. O objetivo é aprofundar o conhecimento em linguagens de baixo nível, manipulação de memória, e implementação de estruturas de dados e algoritmos essenciais.
 
 ---
 
-## 🎯 Status Atual do Progresso
+## 🔥 Status Geral do Progresso
 
 | Exame (Ranck) | Status | Foco Principal |
-| :---: | :----: | :---: |
+| :---: | :----: | :--- |
 | **Ranck 02 (Levels 1-4)** | ✅ Concluído | Funções Utilitárias, Strings e Bitwise |
 | **Ranck 03 (Projetos Longos)** | 🛠️ Códigos Prontos | GNL, Backtracking e Algoritmos Complexos |
 | **Ranck 04+** | ⬜ Pendente | Listas Encadeadas, Árvores e Hashing |
@@ -22,11 +22,11 @@ Este repositório contém as minhas soluções para os exames práticos de progr
 
 O repositório está organizado de acordo com os **Níveis de Dificuldade (Levels)** que compõem o **Ranck 02**, seguido pelos **Projetos Longos** do **Ranck 03**.
 
-### **Exame Ranck 02 (Levels 1 a 4)**
+### Exame Ranck 02 (Levels 1 a 4)
 
 Este exame é composto por vários níveis, focando em funções básicas e essenciais de manipulação de dados, strings e aritmética simples.
 
-#### 📂 Nível 1: Fundamentos Básicos
+#### Nível 1: Fundamentos Básicos
 
 Foco em funções utilitárias simples e manipulação de caracteres.
 
@@ -35,10 +35,11 @@ Foco em funções utilitárias simples e manipulação de caracteres.
 | `ft_strlen`, `ft_swap`, `ft_strcpy` | Manipulação de strings e ponteiros. |
 | `fizzbuzz`, `first_word` | Lógica de laços e processamento de strings. |
 | `ft_rotone`, `ft_rot13`, `ft_ulstr` | Criptografia/manipulação de caracteres. |
+| `ft_putstr`, `ft_repeat_alpha` | Funções de saída e repetição. |
 
 > **Pasta:** [`./Level1`](./Level1)
 
-#### 📂 Nível 2: Operações em Strings e Bits
+#### Nível 2: Operações em Strings e Bits
 
 Introdução a manipulação de bits e conversão de strings.
 
@@ -51,7 +52,7 @@ Introdução a manipulação de bits e conversão de strings.
 
 > **Pasta:** [`./Level2`](./Level2)
 
-#### 📂 Nível 3: Alocação Dinâmica e Matemática
+#### Nível 3: Alocação Dinâmica e Matemática
 
 Foco em funções que exigem alocação de memória e algoritmos matemáticos intermediários.
 
@@ -64,7 +65,7 @@ Foco em funções que exigem alocação de memória e algoritmos matemáticos in
 
 > **Pasta:** [`./Level3`](./Level3)
 
-#### 📂 Nível 4: Estruturas de Dados e Split
+#### Nível 4: Estruturas de Dados e Split
 
 Foco em estruturas de dados dinâmicas e manipulação complexa de strings/memória.
 
@@ -79,7 +80,7 @@ Foco em estruturas de dados dinâmicas e manipulação complexa de strings/memó
 
 ---
 
-### **Exame Ranck 03 (Projetos Longos)**
+### Exame Ranck 03 (Projetos Longos)
 
 Este exame exige a aplicação de múltiplas técnicas de programação em projetos de maior escala e complexidade, frequentemente envolvendo recursão ou manipulação de arquivos.
 
