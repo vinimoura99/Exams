@@ -1,0 +1,119 @@
+# 🚀 Exames de C - Progressão
+
+Este repositório contém as minhas soluções para os exames práticos de programação em C. O objetivo é acompanhar minha evolução em linguagens de baixo nível, memória, estruturas de dados e algoritmos, seguindo a estrutura de níveis de dificuldade dos exames.
+
+---
+
+## 🎯 Status Atual do Progresso
+
+| Exame (Ranck) | Status | Foco Principal |
+| :---: | :----: | :---: |
+| **Ranck 02 (Levels 1-4)** | ✅ Concluído | Funções Utilitárias, Strings e Bitwise |
+| **Ranck 03 (Projetos Longos)** | 🛠️ Códigos Prontos | GNL, Backtracking e Algoritmos Complexos |
+| **Ranck 04+** | ⬜ Pendente | Listas Encadeadas, Árvores e Hashing |
+
+**Observação do Ranck 03:** Os códigos para as funções estão **completos** e funcionando nos testes locais. Restam apenas requisitos finais como a implementação de **`scanf`** em exercícios específicos e o *push* do **TSP**.
+
+**Última Atualização:** 22 de Outubro de 2025
+
+---
+
+## 📚 Estrutura do Repositório
+
+O repositório está organizado de acordo com os **Níveis de Dificuldade (Levels)** que compõem o **Ranck 02**, seguido pelos **Projetos Longos** do **Ranck 03**.
+
+### **Exame Ranck 02 (Levels 1 a 4)**
+
+Este exame é composto por vários níveis, focando em funções básicas e essenciais de manipulação de dados, strings e aritmética simples.
+
+#### 📂 Nível 1: Fundamentos Básicos
+
+Foco em funções utilitárias simples e manipulação de caracteres.
+
+| Função | Tópicos Principais |
+| :---: | :---: |
+| `ft_strlen`, `ft_swap`, `ft_strcpy` | Manipulação de strings e ponteiros. |
+| `fizzbuzz`, `first_word` | Lógica de laços e processamento de strings. |
+| `ft_rotone`, `ft_rot13`, `ft_ulstr` | Criptografia/manipulação de caracteres. |
+
+> **Pasta:** [`./Level1`](./Level1)
+
+#### 📂 Nível 2: Operações em Strings e Bits
+
+Introdução a manipulação de bits e conversão de strings.
+
+| Função | Tópicos Principais |
+| :---: | :---: |
+| `do_op`, `ft_atoi`, `ft_max` | Aritmética e conversão numérica. |
+| `print_bits`, `swap_bits`, `reverse_bits` | Manipulação de bits (bitwise operations). |
+| `union`, `inter`, `wdmatch` | Lógica de conjuntos e comparação de strings. |
+| `camel_to_snake`, `snake_to_camel` | Formatação de strings. |
+
+> **Pasta:** [`./Level2`](./Level2)
+
+#### 📂 Nível 3: Alocação Dinâmica e Matemática
+
+Foco em funções que exigem alocação de memória e algoritmos matemáticos intermediários.
+
+| Função | Tópicos Principais |
+| :---: | :---: |
+| `ft_range`, `ft_rrange` | Alocação dinâmica (`malloc`) de arrays. |
+| `add_prime_sum`, `pgcd`, `lcm` | Algoritmos matemáticos (primos, MDC, MMC). |
+| `epur_str`, `expand_str` | Normalização e formatação avançada de strings. |
+| `ft_list_size` | Listas encadeadas básicas (estrutura e tamanho). |
+
+> **Pasta:** [`./Level3`](./Level3)
+
+#### 📂 Nível 4: Estruturas de Dados e Split
+
+Foco em estruturas de dados dinâmicas e manipulação complexa de strings/memória.
+
+| Função | Tópicos Principais |
+| :---: | :---: |
+| `ft_split` | Manipulação de memória e alocação de array de strings. |
+| `ft_itoa`, `fprime` | Conversão numérica e algoritmos de fatoração. |
+| `sort_list`, `ft_list_remove_if` | Implementação e manipulação avançada de **Listas Encadeadas**. |
+| `rostring`, `rev_wstr` | Reordenação e formatação complexa de frases. |
+
+> **Pasta:** [`./Level4`](./Level4)
+
+---
+
+### **Exame Ranck 03 (Projetos Longos)**
+
+Este exame exige a aplicação de múltiplas técnicas de programação em projetos de maior escala e complexidade, frequentemente envolvendo recursão ou manipulação de arquivos.
+
+| Projeto | Tópicos Principais |
+| :---: | :---: |
+| `Broken_GNL` | Manipulação de arquivos, leitura de descritores, variáveis `static`. |
+| `Filter`, `Rip` | Algoritmos complexos e estruturas de dados dinâmicas. |
+| `N_queens`, `Permutations` | Backtracking, recursão e problemas combinatórios clássicos. |
+| `TSP` (Pendente) | Algoritmos de grafos (Travelling Salesman Problem - Caixeiro Viajante). |
+| `Scanf` (Pendente) | Implementação de funcionalidade de entrada formatada. |
+
+> **Pastas:** [`./Broken_GNL`, `./Filter`, etc.] (No diretório raiz do Ranck 03)
+
+---
+
+## 💻 Como Compilar e Testar
+
+Os exercícios são arquivos C únicos (`.c`). Para compilar e rodar qualquer um deles (assumindo que você tenha o `gcc`):
+
+1.  **Navegue até o diretório do exercício:**
+    ```bash
+    cd Level2/do_op
+    ```
+
+2.  **Compile o código:** Utilize as flags de aviso e erro para garantir código limpo.
+    ```bash
+    gcc -Wall -Wextra -Werror <nome_do_arquivo>.c -o program
+    ```
+    *Exemplo:* `gcc -Wall -Wextra -Werror do_op.c -o do_op`
+
+3.  **Execute o programa com os argumentos necessários:**
+    ```bash
+    ./program <argumentos>
+    ```
+    *Exemplo:* `./do_op "42" "+" "42"`
+
+> 💡 **Nota:** O script **`Launcher.py`** (presente no diretório do Rank 03) pode ser usado para compilação e testes rápidos com diferentes argumentos e entradas (`stdin`).
