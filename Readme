@@ -31,8 +31,6 @@ Este exame foca em funções básicas de manipulação de dados, strings e aritm
 
 #### 📁 Nível 1: Fundamentos Básicos
 
-Foco em funções utilitárias simples e manipulação de caracteres.
-
 * `ft_strlen`, `ft_swap`, `ft_strcpy`: Manipulação de strings e ponteiros.
 * `fizzbuzz`, `first_word`: Lógica de laços e processamento de strings.
 * `ft_rotone`, `ft_rot13`, `ft_ulstr`: Criptografia/manipulação de caracteres.
@@ -41,8 +39,6 @@ Foco em funções utilitárias simples e manipulação de caracteres.
 > **Local:** [`./Level1`](./Level1)
 
 #### 📁 Nível 2: Operações em Strings e Bits
-
-Introdução a manipulação de bits e conversão de strings.
 
 * `do_op`, `ft_atoi`, `ft_max`: Aritmética e conversão numérica.
 * `print_bits`, `swap_bits`, `reverse_bits`: Manipulação de bits (bitwise operations).
@@ -53,8 +49,6 @@ Introdução a manipulação de bits e conversão de strings.
 
 #### 📁 Nível 3: Alocação Dinâmica e Matemática
 
-Foco em funções que exigem alocação de memória e algoritmos matemáticos intermediários.
-
 * `ft_range`, `ft_rrange`: Alocação dinâmica (`malloc`) de arrays.
 * `add_prime_sum`, `pgcd`, `lcm`: Algoritmos matemáticos (primos, MDC, MMC).
 * `epur_str`, `expand_str`: Normalização e formatação avançada de strings.
@@ -63,8 +57,6 @@ Foco em funções que exigem alocação de memória e algoritmos matemáticos in
 > **Local:** [`./Level3`](./Level3)
 
 #### 📁 Nível 4: Estruturas de Dados e Split
-
-Foco em estruturas de dados dinâmicas e manipulação complexa de strings/memória.
 
 * `ft_split`: Manipulação de memória e alocação de array de strings.
 * `ft_itoa`, `fprime`: Conversão numérica e algoritmos de fatoração.
@@ -77,8 +69,6 @@ Foco em estruturas de dados dinâmicas e manipulação complexa de strings/memó
 
 ### Ranck 03: Projetos Longos (Backtracking/GNL)
 
-Este exame exige a aplicação de múltiplas técnicas em projetos de maior escala.
-
 * `Broken_GNL`: Manipulação de arquivos, leitura de descritores, variáveis `static`.
 * `Filter`, `Rip`: Algoritmos complexos e estruturas de dados dinâmicas.
 * `N_queens`, `Permutations`: Backtracking, recursão e problemas combinatórios clássicos.
@@ -88,8 +78,6 @@ Este exame exige a aplicação de múltiplas técnicas em projetos de maior esca
 ---
 
 ## 💻 Como Compilar e Testar
-
-Os exercícios são arquivos C únicos (`.c`). Para compilar e rodar qualquer um deles (assumindo que você tenha o `gcc`):
 
 ### ⚙️ Instruções de Compilação
 
