@@ -6,78 +6,87 @@
 /*   By: vmoura-d <vmoura-d@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 16:40:32 by vmoura-d          #+#    #+#             */
-/*   Updated: 2025/10/19 17:07:52 by vmoura-d         ###   ########.fr       */
+/*   Updated: 2025/10/26 11:01:57 by vmoura-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h> 
 #include <stdio.h>
 
-int is_safe(int *board, int col, int row) {
+int abs(int nbr)
+{
+    if(nbr < 0)
+    {
+        return(-nbr);
+    }
+    return(nbr);
+}
+
+void print_solution(int *array, int size)
+{
+    int idx = 0;
+    while(idx < size)
+    {
+        fprintf(stdout, "%d", array[idx]);
+        if(idx < size - 1)
+        {
+            fprintf(stdout," ");
+        }
+        idx++;
+    }
+    fprintf(stdout,"\n");
+}
+int is_safe(int *array, int col, int row)
+{
     int prev_col = 0;
 
-    while (prev_col < col) {
-        if (board[prev_col] == row) {
-            return (0);
-        }
-        
-        if (abs(board[prev_col] - row) == col - prev_col) {
-            return (0);
-        }
+    while(prev_col < col)
+    {
+        if(array[prev_col] == row)
+            return(0);
+        if(abs(array[prev_col] - row) == col - prev_col)
+            return(0);
         prev_col++;
     }
-    return (1);
+    return(1);
 }
 
-void print_solution(int *board, int n) {
-    int i = 0;
 
-    while (i < n) {
-        fprintf(stdout, "%d", board[i]); 
-        
-        if (i < n - 1) {
-            fprintf(stdout, " ");
-        }
-        i++;
-    }
-    fprintf(stdout, "\n");
-}
-
-void solve(int *board, int col, int n) {
-    int row = 0;
-
-    if (col == n) {
-        print_solution(board, n);
+void solve_queens(int *array, int col, int size)
+{
+    if(col == size)
+    {
+        print_solution(array,size);
         return;
     }
     
-    while (row < n) {
-        if (is_safe(board, col, row)) {
-            board[col] = row; 
-            solve(board, col + 1, n); 
+    int row = 0;
+
+    while(row < size)
+    {
+        if(is_safe(array,col,row))
+        {
+            array[col] = row;
+            solve_queens(array, col + 1, size);
         }
         row++;
     }
 }
+int main(int ac, char **av)
+{
+    if(ac == 2)
+    {
+        int size = atoi(av[1]);
+        int *array = malloc(sizeof(int) * size);
 
-int main(int ac, char **av) {
-    int n;
-    int *board;
-
-    if (ac != 2)
-        return (1);
-        
-    n = atoi(av[1]);
-    
-    if (n <= 0)
-        return (0); 
-        
-    board = malloc(sizeof(int) * n);
-    if (!board)
-        return (1);
-        
-    solve(board, 0, n); 
-    
-    free(board);
-    return (0);
+        if(size < 0)
+            return(0);
+        if(!array)
+            return(1);
+        solve_queens(array,0,size);
+        free(array);
+        return(0);
+    }
+    else
+        return(1);
 }

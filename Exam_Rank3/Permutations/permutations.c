@@ -6,83 +6,74 @@
 /*   By: vmoura-d <vmoura-d@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 13:05:24 by vmoura-d          #+#    #+#             */
-/*   Updated: 2025/10/21 19:31:39 by vmoura-d         ###   ########.fr       */
+/*   Updated: 2025/10/23 15:32:02 by vmoura-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <unistd.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <unistd.h>
 
-
-void swap(char *a, char *b)
+int ft_strlen(char *str)
 {
-    char tmp = *a;
-    *a = *b;
-    *b = tmp;
+    int size = 0;
+    for(int i = 0; str[i]; i++)
+        size++;
+    return(size);
 }
 
-void organize_str(char *str)
+void ft_swap(char *a, char *b)
 {
-    int i,j;
-    int len = strlen(str);
+    char temp = *a;
+    *a = *b;
+    *b = temp;
+}
 
-    for(i = 0; i < len; i++)
+void bubble_sort(char *str)
+{
+    int size = ft_strlen(str);
+    for(int i = 0; i < size; i++)
     {
-        for(j = i + 1; j < len; j++)
+        for(int j =  i + 1; j < size; j++)
         {
             if(str[i] > str[j])
-            {
-                swap(&str[i], &str[j]);
-            }
+                ft_swap(&str[i], &str[j]);
         }
     }
 }
 
-void permutations(char *str, int start , int end)
+void ft_permute(char *str, int pos, int size)
 {
-    int i;
-
-    if(start == end)
+    if(pos == size)
     {
-        write(1, str, end + 1);
-        write(1, "\n", 1);
+        write(1, str, size + 1);
+        write(1 , "\n", 1);
         return;
     }
 
-    i = start;
-    while(i <= end)
+    int i = pos;
+    
+    while(str[i])
     {
-        if (i != start && str[i] == str[start])
-			continue;
-        swap(&str[start], &str[i]);
-		organize_str(str + start + 1); // mantém o resto ordenado
-		permutations(str, start + 1, end);
-		organize_str(str + start); // restaura a ordem
+        if( i != pos && str[i] == str[pos])
+            continue;
+        
+        ft_swap(&str[pos], &str[i]);
+        bubble_sort(str + pos + 1);
+        ft_permute(str, pos + 1, size);
+        bubble_sort(str + pos);
         i++;
+        
     }
 }
-
-int main(int ac, char **av)
+int main(int ac , char **av)
 {
     if(ac == 2)
     {
         char *str = av[1];
-        int len = strlen(str);
+        int len = ft_strlen(str);
 
-        if(len == 0)
-        {
-            write(1, "\n", 1);
-            return(0);
-        }
-
-        organize_str(str);
-
-        permutations(str, 0, len - 1);
-
-        return(0);
+        bubble_sort(str);
+        ft_permute(str, 0 , len - 1);
     }
     else
         return(1);
