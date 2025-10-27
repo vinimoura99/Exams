@@ -6,7 +6,7 @@
 /*   By: vmoura-d <vmoura-d@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 13:05:24 by vmoura-d          #+#    #+#             */
-/*   Updated: 2025/10/23 15:32:02 by vmoura-d         ###   ########.fr       */
+/*   Updated: 2025/10/27 11:03:14 by vmoura-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,59 +21,60 @@ int ft_strlen(char *str)
     return(size);
 }
 
-void ft_swap(char *a, char *b)
+void swap(char *a, char *b)
 {
-    char temp = *a;
+    char tmp = *a;
     *a = *b;
-    *b = temp;
+    *b = tmp;
 }
 
 void bubble_sort(char *str)
 {
-    int size = ft_strlen(str);
-    for(int i = 0; i < size; i++)
+    int len = ft_strlen(str);
+
+    for(int i = 0; i < len; i++)
     {
-        for(int j =  i + 1; j < size; j++)
+        for(int j = i + 1; j < len; j++)
         {
             if(str[i] > str[j])
-                ft_swap(&str[i], &str[j]);
+                swap(&str[i],&str[j]);
         }
     }
 }
 
-void ft_permute(char *str, int pos, int size)
+void permutation(char *str, int start , int end)
 {
-    if(pos == size)
+    if(start == end)
     {
-        write(1, str, size + 1);
-        write(1 , "\n", 1);
+        write(1, str, end + 1);
+        write(1, "\n", 1);
         return;
     }
 
-    int i = pos;
-    
+    int i = start;
+
     while(str[i])
     {
-        if( i != pos && str[i] == str[pos])
+        if(i != start && str[start] == str[i])
             continue;
         
-        ft_swap(&str[pos], &str[i]);
-        bubble_sort(str + pos + 1);
-        ft_permute(str, pos + 1, size);
-        bubble_sort(str + pos);
+        swap(&str[start],&str[i]);
+        bubble_sort(str + start + 1);
+        permutation(str, start + 1, end);
+        bubble_sort(str + start);
         i++;
-        
     }
 }
 int main(int ac , char **av)
 {
+    //abc teu argumento ( ./permutation "abc")
     if(ac == 2)
     {
         char *str = av[1];
-        int len = ft_strlen(str);
+        int len = ft_strlen(av[1]);
 
         bubble_sort(str);
-        ft_permute(str, 0 , len - 1);
+        permutation(str,0,len - 1);
     }
     else
         return(1);

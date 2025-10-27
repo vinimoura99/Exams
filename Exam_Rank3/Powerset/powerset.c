@@ -5,65 +5,69 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmoura-d <vmoura-d@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/26 11:26:22 by vmoura-d          #+#    #+#             */
-/*   Updated: 2025/10/26 11:44:10 by vmoura-d         ###   ########.fr       */
+/*   Created: 2025/10/27 17:49:44 by vmoura-d          #+#    #+#             */
+/*   Updated: 2025/10/27 18:25:48 by vmoura-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-void print_subset(int *subset, int len)
+void	print_subset(int *arr, int *path, int len)
 {
-    for (int i = 0; i < len; i++)
-    {
-        if (i > 0) 
-            printf(" ");
-        printf("%d", subset[i]);
-    }
-    printf("\n");
+	int first = 1;
+
+	for(int i = 0;i < len;i++)
+	{
+		if (path[i])
+		{
+			if (!first)
+				printf(" ");
+			printf("%d", arr[i]);
+			first = 0;
+		}
+	}
+	printf("\n");
 }
-
-void powerset_simple(int *set, int set_len, int *subset, int subset_len, int target)
+void powerset(int *array, int *path, int len, int idx, int sum, int target)
 {
-    // soma o subconjunto atual
-    int sum = 0;
-    
-    for (int i = 0; i < subset_len; i++)
-        sum += subset[i];
-
-    // se bate com o alvo, imprime
-    if (sum == target)
-        print_subset(subset, subset_len);
-
-    // para cada número ainda não incluído, tenta incluí-lo
-    for (int i = subset_len; i < set_len; i++)
+    if(idx == len)
     {
-        subset[subset_len] = set[i];
-        powerset_simple(set, set_len, subset, subset_len + 1, target);
+        if(sum == target)
+        {
+            print_subset(array,path,len);
+        }
+        return;
     }
+
+    path[idx] = 1;
+    powerset(array,path,len,idx + 1,sum + array[idx],target);
+    path[idx] = 0;
+    powerset(array,path,len,idx + 1,sum,target);
 }
-
-int main(int argc, char **argv)
+int main(int ac, char **av)
 {
-    if (argc < 3) 
-        return 1;
-
-    int target = atoi(argv[1]);
-    int set_len = argc - 2;
-    int *set = malloc(sizeof(int) * set_len);
-    int *subset = malloc(sizeof(int) * set_len);
-
-    if (!set || !subset)
-         return 1;
-
-    for (int i = 0; i < set_len; i++)
-        set[i] = atoi(argv[i + 2]);
-
-    powerset_simple(set, set_len, subset, 0, target);
-
-    free(set);
-    free(subset);
+    if(ac < 3)
+        return(1);
     
-    return 0;
+    int target = atoi(av[1]);
+    int len = ac - 2;
+
+    int *array = malloc(sizeof(int) * len);
+    int *path = calloc(len,sizeof(int));
+
+    if(!array || !path)
+        return(1);
+    
+    for(int i = 0;i < len;i++)
+    {
+        array[i] = atoi(av[i + 2]);
+    }
+
+    powerset(array,path,len,0,0,target);
+
+    free(array);
+    free(path);
+    return(0);
+    
 }
