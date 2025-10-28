@@ -6,75 +6,66 @@
 /*   By: vmoura-d <vmoura-d@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 11:45:34 by vmoura-d          #+#    #+#             */
-/*   Updated: 2025/10/26 11:46:42 by vmoura-d         ###   ########.fr       */
+/*   Updated: 2025/10/28 18:15:46 by vmoura-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
-void ft_putstr(char *s)
+int extra_par(char *str, int len)
 {
-    while (*s)
-        write(1, s++, 1);
-    write(1, "\n", 1);
+    int i = 0;
+    int open = 0;
+    int closed = 0;
+
+    while (i < len)
+    {
+        if (str[i] == '(')
+            open++;
+        else if(str[i] == ')')
+        {
+            if(open > 0)
+                open--;
+            else
+                closed++;
+        }   
+        i++;
+    }
+    return(open + closed);
 }
 
-void solve(char *s, int i, int left, int right, int open)
+void rip(char *str, int len, int index, int open, int closed, int removed, int min_remove, char *buffer)
 {
-    if (!s[i])
+    if (index == len)
     {
-        if (left == 0 && right == 0 && open == 0)
-            ft_putstr(s);
+        buffer[index] = '\0';
+        if (open == closed && removed == min_remove)
+            puts(buffer);
         return;
     }
 
-    if (s[i] == '(')
-    {
-        if (left > 0)
-        {
-            char tmp = s[i];
-            s[i] = ' ';
-            solve(s, i + 1, left - 1, right, open);
-            s[i] = tmp;
-        }
-        solve(s, i + 1, left, right, open + 1);
-    }
-    else if (s[i] == ')')
-    {
-        if (right > 0)
-        {
-            char tmp = s[i];
-            s[i] = ' ';
-            solve(s, i + 1, left, right - 1, open);
-            s[i] = tmp;
-        }
-        if (open > 0)
-            solve(s, i + 1, left, right, open - 1);
-    }
-    else
-        solve(s, i + 1, left, right, open);
+    buffer[index] = str[index];
+	if (str[index] == '(')
+		rip(str, len, index + 1, open + 1, closed, removed, min_remove, buffer);
+	else if (str[index] == ')' && open > closed)
+		rip(str, len, index + 1, open, closed + 1, removed, min_remove, buffer); 
+	buffer[index] = ' ';
+	rip(str, len, index + 1, open, closed, removed + 1, min_remove, buffer);
 }
 
-int main(int ac, char **av)
+int main(int argc, char **argv)
 {
-    if (ac != 2)
-        return 1;
-
-    char *s = av[1];
-    int left = 0, right = 0;
-
-    for (int i = 0; s[i]; i++)
-    {
-        if (s[i] == '(')
-            left++;
-        else if (s[i] == ')')
-        {
-            if (left > 0) left--;
-            else right++;
-        }
-    }
-
-    solve(s, 0, left, right, 0);
+    int     min_remove;
+    char    *str;
+    int     len = 0;
     
-    return 0;
+    if (argc != 2)
+        return(1);
+    str = argv[1];
+    while (str[len])
+        len++;
+    char    buffer[len + 1];
+    min_remove = extra_par(str, len);
+    rip(str, len, 0, 0, 0, 0, min_remove, buffer);
 }
