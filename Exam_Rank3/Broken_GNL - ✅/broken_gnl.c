@@ -6,7 +6,7 @@
 /*   By: vmoura-d <vmoura-d@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 15:09:22 by vmoura-d          #+#    #+#             */
-/*   Updated: 2025/10/26 11:10:19 by vmoura-d         ###   ########.fr       */
+/*   Updated: 2025/10/29 15:41:37 by vmoura-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,15 +85,15 @@ char	*get_next_line(int fd)
 	char	*ret = NULL;
 	char	*tmp;
 
-	while (!(tmp = ft_strchr(b, '\n')))
+	while (!(tmp  = ft_strchr(b, '\n')))
 	{
 		if(*b)
 		{
 			if (!str_append_str(&ret, b))
-			return (NULL);
+				return (NULL);
 			b[0] = '\0';
-		}	
-
+		}
+		
 		int	read_ret = read(fd, b, BUFFER_SIZE);
 
 		if (read_ret == -1)
@@ -101,13 +101,14 @@ char	*get_next_line(int fd)
 			free(ret);
 			return (NULL);
 		}
+
 		if (read_ret == 0)
 		{
 			return (ret);
-		}		
-
+		}
+			
 		b[read_ret] = 0;
-		/* tmp = ft_strchr(b, '\n'); */
+		
 	}
 
 	if (!str_append_mem(&ret, b, tmp - b + 1))
@@ -115,14 +116,15 @@ char	*get_next_line(int fd)
 		free(ret);
 		return (NULL);
 	}
+
 	ft_memmove(b, tmp + 1, ft_strlen(tmp + 1) + 1);
 	return (ret);
 }
+
 int main(int ac, char **av) 
 {
     int fd;
-    char *line;
-    
+    char *line;   
     
     if (ac < 2) 
     {
@@ -130,15 +132,13 @@ int main(int ac, char **av)
         return 1;
     }
 
-    
     fd = open(av[1], O_RDONLY);
 
     if (fd < 0)
     {
         perror("Error");
         return(1);
-    }
-    
+    }  
     
     while(1)
     {
