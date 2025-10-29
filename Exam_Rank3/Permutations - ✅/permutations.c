@@ -6,7 +6,7 @@
 /*   By: vmoura-d <vmoura-d@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 13:05:24 by vmoura-d          #+#    #+#             */
-/*   Updated: 2025/10/29 15:51:13 by vmoura-d         ###   ########.fr       */
+/*   Updated: 2025/10/29 20:31:02 by vmoura-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,41 +14,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int ft_strlen(char *str)
-{
-    int size = 0;
-    for(int i = 0;str[i]; i++)
-        size++;
-    return(size);
-}
+int ft_strlen(char *str);
+void bubble_sort(char *str);
+void swap(char *a , char *b);
+void permutation(char *str, int pos, int end_pos);
 
-void swap(char *a, char *b)
+int main(int ac, char **av)
 {
-    char tmp = *a;
-    *a = *b;
-    *b = tmp;
-}
-
-void bubble_sort(char *str)
-{
-    int size = ft_strlen(str);
-
-    for(int i = 0;i < size;i++)
+    if(ac == 2)
     {
-        for(int j = i + 1; j < size;j++)
-        {
-            if(str[i] > str[j])
-                swap(&str[i],&str[j]);
-        }
+        // ./permutation abc
+
+        char *str = av[1];
+        int len = ft_strlen(av[1]);
+
+        bubble_sort(str);
+
+        permutation(str,0,len - 1);
+        return(0);
+        
     }
+    else 
+        return(1);
 }
 
-void permutation(char *str, int pos , int final_pos)
+void permutation(char *str, int pos, int end_pos)
 {
-    if(pos == final_pos)
+    if(pos == end_pos)
     {
-        write(1, str, final_pos + 1);
-        write(1, "\n", 1);
+        write(1, str, end_pos + 1);
+        write(1, "\n",1);
         return;
     }
 
@@ -58,25 +53,37 @@ void permutation(char *str, int pos , int final_pos)
     {
         swap(&str[pos], &str[i]);
         bubble_sort(str + pos + 1);
-        permutation(str, pos + 1, final_pos);
+        permutation(str,pos + 1,end_pos);
         bubble_sort(str + pos);
         i++;
     }
-
 }
-int main(int ac, char **av)
+void bubble_sort(char *str)
 {
-    if(ac == 2)
+    int len = ft_strlen(str);
+
+    for(int i = 0;i < len; i++)
     {
-        char *str = av[1];
-        int len = ft_strlen(str);
-
-        //Sort the string
-        bubble_sort(str);
-
-        //Backtracking permutation
-        permutation(str,0,len - 1);
+        for(int j = i + 1; j < len; j++)
+        {
+            if(str[i] > str[j])
+                swap(&str[i],&str[j]);
+        }
     }
-    else
-        return(1);
+}
+
+void swap(char *a , char *b)
+{
+    char tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+int ft_strlen(char *str)
+{
+    int size = 0;
+
+    for(int i = 0;str[i];i++)
+        size++;
+    
+    return(size);
 }

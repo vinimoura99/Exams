@@ -6,7 +6,7 @@
 /*   By: vmoura-d <vmoura-d@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 15:09:22 by vmoura-d          #+#    #+#             */
-/*   Updated: 2025/10/29 15:41:37 by vmoura-d         ###   ########.fr       */
+/*   Updated: 2025/10/29 20:12:35 by vmoura-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	if (dest == src)
 		return (dest);
 	else
-		return (ft_memcpy(dest, src, n));
-	
+		return (ft_memcpy(dest, src, n));	
 }
 
 char	*get_next_line(int fd)
@@ -85,7 +84,7 @@ char	*get_next_line(int fd)
 	char	*ret = NULL;
 	char	*tmp;
 
-	while (!(tmp  = ft_strchr(b, '\n')))
+	while (!(tmp = ft_strchr(b, '\n')))
 	{
 		if(*b)
 		{
@@ -108,7 +107,6 @@ char	*get_next_line(int fd)
 		}
 			
 		b[read_ret] = 0;
-		
 	}
 
 	if (!str_append_mem(&ret, b, tmp - b + 1))
@@ -117,7 +115,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	}
 
-	ft_memmove(b, tmp + 1, ft_strlen(tmp + 1) + 1);
+	ft_memmove(b, tmp + 1, ft_strlen(tmp) + 1);
 	return (ret);
 }
 
